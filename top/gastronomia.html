@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecionando para Votação - Top Destaque Candeias</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #000, #1a1a1a);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    
+
+    .container {
+      background: rgba(255, 215, 0, 0.05);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 500px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
+      animation: fadeIn 1s ease;
+      margin-top: 40px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+
+    .timer {
+      color: #ffd700;
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 1.1em;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 25px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <div class="container">
+    <h1>Bem-vindo à votação 🏆</h1>
+    <p>Obrigado por participar do <strong>Top Destaque Candeias 2025</strong>!<br>
+    Em instantes, você será redirecionado para a página da votação.<br>
+    Após votar, volte e vote em outras categorias.</p>
+
+    <p class="timer">Redirecionando em <span id="tempo">5</span> segundos...</p>
+  </div>
+
+  <footer>
+    © 2025 Top Destaque Candeias — Todos os direitos reservados.
+  </footer>
+
+  <script>
+    // tempo e redirecionamento
+    let tempo = 5;
+    const tempoTexto = document.getElementById("tempo");
+    const destino = "https://bahianoticia.com.br/votação/top-destaques-gastronomia-2025/"; // 🔗 coloque aqui o link real da enquete
+
+    const contador = setInterval(() => {
+      tempo--;
+      tempoTexto.textContent = tempo;
+      if (tempo <= 0) {
+        clearInterval(contador);
+        window.location.href = destino;
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
